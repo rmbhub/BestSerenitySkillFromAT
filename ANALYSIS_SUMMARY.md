@@ -301,59 +301,80 @@ python3 scripts/server.py --port 8787
 
 ---
 
-### 9. yan-labs/serenity-aleabitoreddit (推文档案库) ❌
+### 9. yan-labs/serenity-aleabitoreddit (推文档案库 + 战绩校准) ⭐⭐⭐⭐⭐
 
-**状态**: 克隆失败 (SSL/TLS连接失败)  
-**预期定位**: 类似lanfuli的推文数据抓取和分析
+**定位**: 最完整的 Serenity 推文蒸馏 + 可安装 Agent Skill  
+**数据来源**: 5,835条推文 (2025-07-02 → 2026-06-06) + 4篇 X Articles (2026-01 → 2026-05)  
+**安装**: `npx skills add yan-labs/serenity-aleabitoreddit` ([skills.sh](https://skills.sh/yan-labs/serenity-aleabitoreddit))
 
-**错误信息**:
-```
-fatal: unable to access 'https://github.com/yan-labs/serenity-aleabitoreddit.git/': 
-schannel: failed to receive handshake, SSL/TLS connection failed
-```
+**核心特点**:
+- **单一自包含 Skill**: 将原始推文档案、分期蒸馏、方法论、逐股知识库整合为一个 skill
+- **14条命名原则 + 可运行检查清单**: methodology.md 覆盖瓶颈猎取、多跳BOM映射、Mag7客户过滤、GAAP毛利战、稀释/ATM否决等
+- **逐股知识库 (theses.md)**: 按子行业分组，含信念档位、观点演变、最新立场
+- **战绩独立校准**: 用 Yahoo Finance 复算公开喊单，约61% 30日方向准确率、成熟主题子集约75-85%
+- **实时刷新机制**: SKILL.md 要求使用前 `skills update`，数据约30分钟过期
+- **增量维护**: `update.py` 拉取最新推文，`prep.py` 重算月度分块和 ticker 统计
 
-**可能原因**:
-1. 仓库已设为私有
-2. 仓库已被删除
-3. 网络限制或DNS问题
+**三个工作流**:
+1. 单股评估 — 查 theses.md → 跑 methodology 检查清单 → 核对时效性
+2. 赛道扫描 — 按子行业/主题聚合 his universe
+3. 观点权重判断 — 查 track-record.md 决定 his 意见该信多少
 
-**替代方案**: **lanfuli/aleabito-serenity-skills** 提供完全相同的功能
-- ✅ 基于6,120条推文的完整档案
-- ✅ X API数据抓取脚本
-- ✅ 注意力雷达功能
-- ✅ 提及分析和研究地图
+**与 lanfuli 的差异**:
 
-**结论**: yan-labs仓库功能已被lanfuli仓库完全覆盖，无需额外获取。
+| 维度 | yan-labs | lanfuli |
+|------|----------|---------|
+| 技能结构 | 单一 skill | 三技能互锁 (follow/method/radar) |
+| 推文数量 | 5,835 | 6,120 |
+| 独特能力 | 战绩校准 + skills.sh 一键安装 | 注意力雷达 + 多视角辩论 |
+| 维护方式 | update.py 增量 + maintenance.md 规则 | X API 抓取 + 全档案回填 |
+
+**独特价值**:
+- **唯一带独立战绩校准的推文档案仓库** (非自述收益率)
+- **skills.sh 生态集成**，安装/更新最便捷
+- **逐股知识库最结构化** (信念档位 + 演变轨迹)
+- **X Articles 摘要** (不存储全文，合规蒸馏)
+
+**风险提醒**:
+- 幸存者偏差、单账号脆弱性 (与 lanfuli 相同)
+- 数据约30分钟过期，必须 refresh 后使用
+- 战绩校准仅为方向性参考，非可复制收益
 
 ---
 
-### 10. Oxagata-prog/serenity-skill (轻量上手) ❌
+### 10. xvhaoran778-cyber/Serenity.SKILL (跨市场卡点 + 贝叶斯更新) ⭐⭐⭐⭐
 
-**状态**: 仓库不存在 (404 Not Found)  
-**预期定位**: 轻量级、简化版的Serenity skill，适合新手快速上手
+> **替代说明**: 原 `Oxagata-prog/serenity-skill` 仍返回 404；本仓库为社区确认的可用替代。
 
-**错误信息**:
-```
-remote: Repository not found.
-fatal: repository 'https://github.com/Oxagata-prog/serenity-skill.git/' not found
-```
+**定位**: 跨市场 chokepoint investing 研究流程 (A股/美股/港股/台股/日股/欧洲)  
+**Skill 名**: `serenity-chokepoint-investing`  
+**语言**: 中文为主，支持多市场英文披露源
 
-**可能原因**:
-1. 仓库从未存在（图片信息可能有误）
-2. 仓库已被删除
-3. 用户名错误或重命名
+**核心特点**:
+- **15步研究工作流**: 市场识别 → 抓取公告 → 需求冲击 → 逆向产业链 → 贝叶斯先验 → 三层深挖 → 卡点识别 → 财务翻译 → 定价真空 → 错杀检测 → 证据更新 → 资金轮动 → 评分 → 交易/观点分离 → 分级输出
+- **15维评分量表 (research-rubric.md)**: 需求冲击/链深度/瓶颈强度/架构锁定/证据质量/错杀信号等，40+分=值得深挖
+- **交易披露标签体系**: 明确区分 Explicit buy / Thesis-only / Basket disclosure 等8类
+- **多市场披露源 (market-data-and-news.md)**: A股(巨潮/互动易)、美股(SEC EDGAR/8-K)、港股(HKEXnews)等分市场优先级
+- **模式库 (pattern-library.md)**: 可复用的 Serenity 研究模式提取
 
-**替代方案**: **zongmin-yu/serenity-skills** 作为"轻量上手"的最佳替代
-- ✅ 文件最少（仅10个文件 vs muxuuu的17个）
-- ✅ README.zh.md仅1.9KB，极简风格
-- ✅ CLAUDE.md仅3.4KB，易于理解
-- ✅ 专注单一领域（半导体），学习曲线平缓
+**输出结构**:
+- 单股: Verdict / Market Context / Chokepoint / Evidence / Bayesian Update / Mispricing / Risks / Catalysts / Trade Disclosure / Open Checks
+- 篮子: Candidate | Supply-chain node | Chokepoint strength | Evidence quality | Mispricing | Catalyst | Risk | Confidence
 
-**其他轻量选择**:
-- fadewalk/serenity-stock-choke (A股用户，六步法易理解)
-- W-Y-P/Serenity-aleabitoreddit-skill (美股用户，模型无关)
+**与 zongmin-yu (原轻量替代) 的差异**:
+- zongmin-yu: 极简、半导体垂直、文件最少
+- xvhaoran778: 跨市场通用、贝叶斯框架、正式评分量表、公告抓取纪律更强
 
-**结论**: Oxagata仓库可能从未发布或已被删除，zongmin-yu提供更好的轻量级体验。
+**独特价值**:
+- **唯一内置贝叶斯更新框架的跨市场卡点 skill**
+- **交易披露与观点表达严格分离** (防跟单误读)
+- **多市场披露源分优先级** (A股适配优于多数英文仓库)
+- **15维量化评分**，适合候选比较和筛选
+
+**局限**:
+- 无推文原始档案或注意力雷达 (需配合 yan-labs/lanfuli)
+- 文件体量轻，不含可视化工具
+- 不模仿 Serenity 身份/收益叙事，偏方法论蒸馏
 
 ---
 
@@ -371,6 +392,8 @@ fatal: repository 'https://github.com/Oxagata-prog/serenity-skill.git/' not foun
 | 6 | haskaomni/serenity | ⭐⭐⭐ | 可视化 + 本地化运行 |
 | 7 | leslieyeo/serenity-reply | ⭐⭐⭐⭐ | 心智模型蒸馏 + 诚实度最高 |
 | 8 | zongmin-yu/serenity-skills | ⭐⭐⭐ | 半导体垂直领域 + 轻量级 |
+| 9 | yan-labs/serenity-aleabitoreddit | ⭐⭐⭐⭐⭐ | 推文档案 + 战绩校准 + skills.sh |
+| 10 | xvhaoran778-cyber/Serenity.SKILL | ⭐⭐⭐⭐ | 跨市场卡点 + 贝叶斯更新 |
 
 ### 按特色分类
 
@@ -380,9 +403,9 @@ fatal: repository 'https://github.com/Oxagata-prog/serenity-skill.git/' not foun
 - **ZadAnthony/serenity-skill**: 中文操作化引擎
 
 #### 📊 数据导向
+- **yan-labs/serenity-aleabitoreddit**: 推文档案 + 战绩校准 + 逐股知识库
 - **lanfuli/aleabito-serenity-skills**: 推文档案 + 注意力雷达
 - **haskaomni/serenity**: 本地数据库 + 可视化
-- **yan-labs/serenity-aleabitoreddit**: (未获取)
 
 #### 🇳 A股专用
 - **fadewalk/serenity-stock-choke**: A股卡脖子框架v2.0
@@ -617,4 +640,4 @@ lanfuli/haskaomni的价值与风险:
 
 ---
 
-*本文档于2026年6月6日完成，基于8个成功克隆的仓库分析 (yan-labs和Oxagata-prog未能获取)*
+*本文档于2026年6月6日完成，基于10个仓库分析 (xvhaoran778-cyber 替代 Oxagata-prog)*

@@ -1,5 +1,9 @@
 # Serenity 供应链卡点 Skill 合集 - 综合分析项目
 
+<div align="center">
+  <img src="./BestSkillFromAT.png" alt="BestSkillFromAT" width="720">
+</div>
+
 ## 📋 项目概述
 
 本项目是团队在完成AlphaTerminal的过程中做的一点工作，我认为这个任务单独拎出来也很有价值，所以我们分析了10个基于 **Serenity (@aleabitoreddit)** 投资方法论的 GitHub 仓库，每个仓库都从不同角度提炼和应用了"**供应链卡点**"投资策略。最终整合为一个统一的终极框架。
@@ -10,7 +14,7 @@
 
 ## 🎯 任务完成情况
 
-### ✅ 成功分析 (8/10)
+### ✅ 成功分析 (10/10)
 
 | # | 仓库 | 状态 | 特色 | 评分 |
 |---|------|------|------|------|
@@ -22,13 +26,8 @@
 | 6 | [fadewalk/serenity-stock-choke](https://github.com/fadewalk/serenity-stock-choke) | ✅ 完整 | A股卡脖子 + 政策适配最佳 | ⭐⭐⭐⭐⭐ |
 | 7 | [leslieyeo/serenity-reply](https://github.com/leslieyeo/serenity-reply) | ✅ 完整 | 深度资料 + 心智模型蒸馏 | ⭐⭐⭐⭐ |
 | 8 | [zongmin-yu/serenity-skills](https://github.com/zongmin-yu/serenity-skills) | ✅ 完整 | 半导体供应链 + 垂直领域 | ⭐⭐⭐ |
-
-### ❌ 未能获取 (2/10)
-
-| # | 仓库 | 状态 | 原因 | 替代方案 |
-|---|------|------|------|----------|
-| 9 | yan-labs/serenity-aleabitoreddit | ❌ 失败 | SSL/TLS连接失败 | lanfuli/aleabito-serenity-skills (功能完全覆盖) |
-| 10 | Oxagata-prog/serenity-skill | ❌ 不存在 | GitHub仓库404 | zongmin-yu/serenity-skills (轻量级替代) |
+| 9 | [yan-labs/serenity-aleabitoreddit](https://github.com/yan-labs/serenity-aleabitoreddit) | ✅ 完整 | 推文档案 + 战绩校准 + skills.sh 一键安装 | ⭐⭐⭐⭐⭐ |
+| 10 | [xvhaoran778-cyber/Serenity.SKILL](https://github.com/xvhaoran778-cyber/Serenity.SKILL) | ✅ 完整 | 跨市场卡点 + 贝叶斯更新 + 评分量表 | ⭐⭐⭐⭐ |
 
 **详细说明**: 见 [MISSING_REPOSITORIES_NOTE.md](./MISSING_REPOSITORIES_NOTE.md)
 
@@ -52,7 +51,9 @@ summary_serenity/
 ├── ZadAnthony-serenity-skill/         # 仓库5: 中文Claude版
 ├── fadewalk-serenity-stock-choke/     # 仓库6: A股卡脖子
 ├── leslieyeo-serenity-reply/          # 仓库7: 深度资料
-└── zongmin-yu-serenity-skills/        # 仓库8: 半导体供应链
+├── zongmin-yu-serenity-skills/        # 仓库8: 半导体供应链
+├── yan-labs-serenity-aleabitoreddit/  # 仓库9: 推文档案 + 战绩校准
+└── xvhaoran778-cyber-Serenity-SKILL/  # 仓库10: 跨市场卡点
 ```
 
 ---
@@ -62,7 +63,7 @@ summary_serenity/
 ### 1. [ANALYSIS_SUMMARY.md](./ANALYSIS_SUMMARY.md) - 详细对比分析
 
 **内容**:
-- 8个仓库的逐一深度分析
+- 10个仓库的逐一深度分析
 - 按完整性、特色、适用场景排名
 - 核心差异矩阵 (语言/防幻觉/数据基础/可视化/A股适配等)
 - 整合建议与终极架构设计
@@ -75,7 +76,7 @@ summary_serenity/
 
 **内容**:
 - 完整的Agent Skill格式 (可直接使用)
-- 整合8个仓库精华的统一框架 v2.0
+- 整合10个仓库精华的统一框架 v2.0
 - 九步工作流 (Scope Gate → 仓位逻辑)
 - 单股报告结构 + 赛道报告结构
 - 好卡点判据 (14条) + 红旗扫描 (10项)
@@ -132,11 +133,17 @@ summary_serenity/
 - ✅ **教学融在分析里**: 读者看你怎么分析就学会了，不靠标签
 - ✅ **反确认偏误内置**: bear先写、强制证伪门、反向加压
 
-### 5. 数据驱动的局限 (lanfuli/haskaomni)
+### 5. 数据驱动的局限 (yan-labs/lanfuli/haskaomni)
 
-- ✅ 价值: 基于真实历史数据，避免过拟合
+- ✅ 价值: 基于真实历史数据，避免过拟合；yan-labs 额外提供独立战绩校准
 - ❌ 风险: 幸存者偏差 (只看到成功的)、单账号脆弱性
-- ️ 平衡: 作为候选发生器，不是预言机
+- 平衡: 作为候选发生器，不是预言机
+
+### 6. 跨市场贝叶斯框架 (xvhaoran778 的贡献)
+
+- ✅ **15维评分量表**: 量化卡点强度，适合候选比较
+- ✅ **交易披露标签**: 严格区分喊单与观点，防跟单误读
+- ✅ **多市场披露源**: A股/美股/港股分优先级，公告抓取纪律强
 
 ---
 
@@ -156,12 +163,14 @@ summary_serenity/
 
 #### 深度定制
 1. 阅读 **leslieyeo/serenity-reply** 理解心智模型和内在矛盾
-2. 用 **lanfuli/aleabito-serenity-skills** 追踪注意力流向
-3. 整合为个性化工作流
+2. 用 **yan-labs/serenity-aleabitoreddit** 查逐股知识库和战绩校准
+3. 用 **lanfuli/aleabito-serenity-skills** 追踪注意力流向
+4. 整合为个性化工作流
 
 #### 生产环境
 - 采用 **ZadAnthony/serenity-skill** 作为主干 (防幻觉最强)
-- 集成 **lanfuli的注意力雷达** 作为数据层
+- 集成 **yan-labs 推文档案 + lanfuli 注意力雷达** 作为数据层
+- 用 **xvhaoran778/Serenity.SKILL** 做跨市场评分和贝叶斯更新
 - 根据市场选择 **fadewalk (A股)** 或 **W-Y-P (美股)** 作为适配器
 - 定期用 **leslieyeo的诚实边界** 做自我审查
 
@@ -203,6 +212,8 @@ cp FINAL_UNIFIED_SKILL.md ~/.claude/skills/serenity-unified/SKILL.md
 | 6 | haskaomni/serenity | ⭐⭐⭐⭐ | 可视化 + 本地化运行 |
 | 7 | leslieyeo/serenity-reply | ⭐⭐⭐⭐ | 心智模型蒸馏 + 诚实度最高 |
 | 8 | zongmin-yu/serenity-skills | ⭐⭐ | 半导体垂直领域 + 轻量级 |
+| 9 | yan-labs/serenity-aleabitoreddit | ⭐⭐⭐⭐⭐ | 推文档案最全 + 战绩独立校准 + skills.sh |
+| 10 | xvhaoran778-cyber/Serenity.SKILL | ⭐⭐⭐⭐ | 跨市场卡点 + 贝叶斯更新 + 15维评分量表 |
 
 ### 核心差异矩阵
 
@@ -224,7 +235,7 @@ cp FINAL_UNIFIED_SKILL.md ~/.claude/skills/serenity-unified/SKILL.md
 ### 克隆命令
 
 ```bash
-# 成功克隆的8个仓库
+# 全部10个仓库
 git clone https://github.com/muxuuu/serenity-skill.git muxuuu-serenity-skill
 git clone https://github.com/lanfuli/aleabito-serenity-skills.git lanfuli-aleabito-serenity-skills
 git clone https://github.com/haskaomni/serenity.git haskaomni-serenity
@@ -233,10 +244,8 @@ git clone https://github.com/ZadAnthony/serenity-skill.git ZadAnthony-serenity-s
 git clone https://github.com/fadewalk/serenity-stock-choke.git fadewalk-serenity-stock-choke
 git clone https://github.com/leslieyeo/serenity-reply.git leslieyeo-serenity-reply
 git clone https://github.com/zongmin-yu/serenity-skills.git zongmin-yu-serenity-skills
-
-# 失败的2个仓库
-git clone https://github.com/yan-labs/serenity-aleabitoreddit.git yan-labs-serenity-aleabitoreddit  # SSL错误
-git clone https://github.com/Oxagata-prog/serenity-skill.git Oxagata-serenity-skill  # 404不存在
+git clone https://github.com/yan-labs/serenity-aleabitoreddit.git yan-labs-serenity-aleabitoreddit
+git clone https://github.com/xvhaoran778-cyber/Serenity.SKILL.git xvhaoran778-cyber-Serenity-SKILL
 ```
 
 ### 文件大小统计
@@ -282,6 +291,8 @@ MIT — 随便用，随便改，随便造。
 - [@haskaomni](https://github.com/haskaomni) - Alpha假设
 - [@leslieyeo](https://github.com/leslieyeo) - 深度资料
 - [@zongmin-yu](https://github.com/zongmin-yu) - 半导体供应链
+- [@yan-labs](https://github.com/yan-labs) - 推文档案 + 战绩校准
+- [@xvhaoran778-cyber](https://github.com/xvhaoran778-cyber) - 跨市场卡点 + 贝叶斯框架
 
 以及原始方法论的来源：
 - **Serenity (@aleabitoreddit)** - X/Twitter上的AI/半导体供应链分析师
@@ -296,12 +307,18 @@ MIT — 随便用，随便改，随便造。
 - ✅ 整合为终极统一SKILL (FINAL_UNIFIED_SKILL.md)
 - ✅ 创建项目README
 
+### 2026-06-06 (补充)
+- ✅ 成功克隆 [yan-labs/serenity-aleabitoreddit](https://github.com/yan-labs/serenity-aleabitoreddit) (此前 SSL/TLS 失败)
+- ✅ 完成 [xvhaoran778-cyber/Serenity.SKILL](https://github.com/xvhaoran778-cyber/Serenity.SKILL) 分析
+- ✅ 更新 README / ANALYSIS_SUMMARY / MISSING_REPOSITORIES_NOTE
+- ✅ 任务完成度提升至 **10/10**
+
 ### TODO
-- [ ] 尝试修复yan-labs仓库的SSL问题
-- [ ] 寻找Oxagata-prog仓库的替代源
+- [x] 尝试修复yan-labs仓库的SSL问题 → 已解决，仓库可正常克隆
+- [x] 完成 xvhaoran778-cyber/Serenity.SKILL 分析
 - [ ] 添加更多垂直领域模板 (机器人/电力液冷/内存HBM)
 - [ ] 创建交互式演示网页
 
 ---
 
-*本文档于2026年6月6日完成，基于8个成功克隆的仓库分析*
+*本文档于2026年6月6日完成，基于10个仓库分析*
